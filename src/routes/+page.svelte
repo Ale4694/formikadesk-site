@@ -5,7 +5,7 @@
 	 *  DA COMPILARE — sostituisci con i tuoi dati reali.
 	 *  Il numero WhatsApp va in formato internazionale, solo cifre.
 	 * ============================================================== */
-	const WHATSAPP_NUMERO = '393000000000'; // <-- METTI IL TUO NUMERO
+	const WHATSAPP_NUMERO = '393204562042'; // <-- METTI IL TUO NUMERO
 	const WHATSAPP_MSG = 'Ciao! Ho visto FormikaDesk e vorrei saperne di più.';
 	const EMAIL = 'ciao@formikadesk.it'; // <-- opzionale
 	const PIVA = 'P.IVA 00000000000'; // <-- quando disponibile
