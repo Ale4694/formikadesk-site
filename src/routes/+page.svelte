@@ -7,8 +7,8 @@
 	 * ============================================================== */
 	const WHATSAPP_NUMERO = '393204562042'; // <-- METTI IL TUO NUMERO
 	const WHATSAPP_MSG = 'Ciao! Ho visto FormikaDesk e vorrei saperne di più.';
-	const EMAIL = 'ciao@formikadesk.it'; // <-- opzionale
-	const PIVA = 'P.IVA 00000000000'; // <-- quando disponibile
+	const EMAIL = 'alessandroformica6@gmail.com'; // <-- opzionale
+	const PIVA = ''; // <-- quando disponibile
 
 	const waLink = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(WHATSAPP_MSG)}`;
 	const anno = new Date().getFullYear();
@@ -328,7 +328,7 @@
 			<div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 				{#each settori as s}
 					<div
-						class="reveal flex aspect-[4/3] flex-col justify-between rounded-2xl border p-6 {s.open
+						class="reveal flex min-h-[120px] flex-col justify-between rounded-2xl border p-6 {s.open
 							? 'border-accent bg-accent text-white'
 							: 'border-line bg-paper-2/50'}"
 					>
