@@ -46,7 +46,7 @@
 			a: 'No. Gira in locale sul tuo computer. Internet serve solo per ricevere gli aggiornamenti.'
 		},
 		{
-			q: 'Cosa include gli 80 € al mese?',
+			q: 'Cosa include l’abbonamento?',
 			a: 'Tutti gli aggiornamenti, l’assistenza e le nuove funzioni. Nessun costo a sorpresa.'
 		},
 		{
@@ -92,7 +92,7 @@
 		<div class="hidden items-center gap-8 text-sm text-ink-soft md:flex">
 			<a href="#cosa-fa" class="transition-colors hover:text-ink">Cosa fa</a>
 			<a href="#in-locale" class="transition-colors hover:text-ink">In locale</a>
-			<a href="#prezzo" class="transition-colors hover:text-ink">Prezzo</a>
+			<a href="#preventivo" class="transition-colors hover:text-ink">Preventivo</a>
 		</div>
 		<a
 			href={waLink}
@@ -301,8 +301,8 @@
 				<div class="reveal">
 					<div class="font-mono text-sm text-accent">→ Nessun canone nascosto</div>
 					<p class="mt-3 leading-relaxed text-paper/65">
-						Paghi il software, non l’affitto di un server. Il prezzo è quello che leggi qui sotto,
-						sempre.
+						Paghi il software, non l’affitto di un server. Quello che concordiamo all’inizio è
+						quello che paghi, sempre.
 					</p>
 				</div>
 				<div class="reveal">
@@ -342,52 +342,43 @@
 		</div>
 	</section>
 
-	<!-- ================= PREZZO ================= -->
-	<section id="prezzo" class="scroll-mt-20 border-y border-line bg-paper-2/60">
+	<!-- ================= PREVENTIVO ================= -->
+	<section id="preventivo" class="scroll-mt-20 border-y border-line bg-paper-2/60">
 		<div class="mx-auto max-w-6xl px-5 py-20 sm:px-8">
 			<div class="reveal mx-auto max-w-xl text-center">
-				<span class="eyebrow">Prezzo</span>
+				<span class="eyebrow" style="color: #E8492C">Preventivo</span>
 				<h2 class="mt-4 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-					Un prezzo chiaro, senza sorprese.
+					Ogni attività è diversa.
 				</h2>
+				<p class="mt-5 text-lg leading-relaxed text-ink-soft">
+					Il prezzo dipende da quello che ti serve davvero: quanti articoli hai a magazzino, se
+					vanno recuperati i dati dal programma che usi oggi, se ti serve anche il computer.
+					Scrivimi e ne parliamo.
+				</p>
+				<ul class="mt-6 space-y-2 text-left text-ink-soft">
+					<li class="flex items-start gap-2">
+						<span class="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-accent"></span>
+						Preventivo gratuito e senza impegno
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-accent"></span>
+						Ti mostro il programma prima di decidere
+					</li>
+					<li class="flex items-start gap-2">
+						<span class="mt-1.5 h-1.5 w-1.5 flex-none rounded-full bg-accent"></span>
+						Vengo io in negozio, quando ti è comodo
+					</li>
+				</ul>
 			</div>
-			<div class="reveal mx-auto mt-12 max-w-2xl overflow-hidden rounded-3xl border border-line bg-paper">
-				<div class="grid sm:grid-cols-3">
-					<div class="border-b border-line p-8 sm:border-b-0 sm:border-r">
-						<span class="font-mono text-xs text-muted">Attivazione</span>
-						<div class="mt-2 font-sans text-4xl font-semibold tracking-tight tabular-nums">€ 600</div>
-						<span class="text-sm text-muted">una tantum</span>
-						<p class="mt-4 text-sm leading-relaxed text-ink-soft">
-							Installazione, configurazione e migrazione dei dati dal tuo programma attuale.
-						</p>
-					</div>
-					<div class="border-b border-line p-8 sm:border-b-0 sm:border-r">
-						<span class="font-mono text-xs text-muted">Abbonamento</span>
-						<div class="mt-2 font-sans text-4xl font-semibold tracking-tight tabular-nums">€ 80</div>
-						<span class="text-sm text-muted">al mese</span>
-						<p class="mt-4 text-sm leading-relaxed text-ink-soft">
-							Aggiornamenti, assistenza e nuove funzioni. Tutto incluso, nessun extra.
-						</p>
-					</div>
-					<div class="p-8">
-						<span class="font-mono text-xs text-muted">Con PC incluso</span>
-						<div class="mt-2 font-sans text-4xl font-semibold tracking-tight tabular-nums">€ 100</div>
-						<span class="text-sm text-muted">al mese</span>
-						<p class="mt-4 text-sm leading-relaxed text-ink-soft">
-							PC Windows preconfigurato con FormikaDesk già installato. Pronto all'uso dal primo giorno.
-						</p>
-					</div>
-				</div>
-				<div class="border-t border-line bg-paper-2/60 p-6 text-center">
-					<a
-						href="https://wa.me/393204562042"
-						target="_blank"
-						rel="noopener"
-						class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
-					>
-						Chiedi un preventivo su WhatsApp
-					</a>
-				</div>
+			<div class="reveal mx-auto mt-9 max-w-xl text-center">
+				<a
+					href="https://wa.me/393204562042"
+					target="_blank"
+					rel="noopener"
+					class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
+				>
+					Chiedi un preventivo su WhatsApp
+				</a>
 			</div>
 		</div>
 	</section>
