@@ -1,6 +1,9 @@
 /**
  * Worker entry point per formikadesk-site (Workers-with-assets, no adapter-cloudflare).
  *
+ * Deploy gestito da Cloudflare Workers Builds (Git integration su master),
+ * configurata il 2026-08-19: da ora ogni push su master fa deploy automatico.
+ *
  * Il sito è interamente statico (SvelteKit adapter-static → build/), servito
  * tramite il binding "assets" configurato in wrangler.jsonc. Questo script
  * viene invocato SOLO per le richieste che non combaciano con nessun asset
