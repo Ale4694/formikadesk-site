@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import RecensioniSection from '$lib/components/RecensioniSection.svelte';
 
 	/* ============================================================== *
 	 *  DA COMPILARE — sostituisci con i tuoi dati reali.
@@ -92,6 +93,7 @@
 		<div class="hidden items-center gap-8 text-sm text-ink-soft md:flex">
 			<a href="#cosa-fa" class="transition-colors hover:text-ink">Cosa fa</a>
 			<a href="#in-locale" class="transition-colors hover:text-ink">In locale</a>
+			<a href="#recensioni" class="transition-colors hover:text-ink">Recensioni</a>
 			<a href="#preventivo" class="transition-colors hover:text-ink">Preventivo</a>
 		</div>
 		<a
@@ -383,22 +385,8 @@
 		</div>
 	</section>
 
-	<!-- ================= TESTIMONIANZA ================= -->
-	<!-- DA APPROVARE: sostituisci con una frase reale e autorizzata da Valentina Anelli. -->
-	<section>
-		<div class="mx-auto max-w-4xl px-5 py-20 sm:px-8">
-			<figure class="reveal text-center">
-				<blockquote class="font-display text-2xl font-medium leading-snug tracking-tight sm:text-3xl">
-					“Prima passavo le sere a sistemare i documenti. Ora è tutto in ordine, sul mio computer, e
-					all’assistenza rispondono subito.”
-				</blockquote>
-				<figcaption class="mt-6 text-sm text-muted">
-					<span class="font-medium text-ink">Valentina Anelli</span> — Anelli Ricambi, Casteltermini
-					(AG)
-				</figcaption>
-			</figure>
-		</div>
-	</section>
+	<!-- ================= RECENSIONI ================= -->
+	<RecensioniSection />
 
 	<!-- ================= FAQ ================= -->
 	<section class="border-t border-line bg-paper-2/40">
