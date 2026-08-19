@@ -1,0 +1,32 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+
+	// Deve coincidere ESATTAMENTE col nome del Worker già esistente su Cloudflare
+	// (Workers & Pages → formikadesk-site), altrimenti Workers Builds ne crea uno nuovo.
+	"name": "formikadesk-site",
+	"main": "worker/index.ts",
+	"compatibility_date": "2026-08-19",
+
+	// Sito statico prerenderizzato da SvelteKit (adapter-static → cartella build/).
+	// Le richieste che NON combaciano con un asset statico vengono passate al
+	// Worker in worker/index.ts (es. POST /api/recensioni).
+	"assets": {
+		"directory": "./build",
+		"binding": "ASSETS"
+	},
+
+	// Namespace creato con: npx wrangler kv namespace create RECENSIONI_KV
+	"kv_namespaces": [
+		{
+			"binding": "RECENSIONI_KV",
+			"id": "5dfcc5dd74164fe9a1e4b3af705f402b"
+		}
+	],
+
+	// Variabili non sensibili. RESEND_API_KEY resta un secret configurato solo
+	// da dashboard (Settings → Variables and Secrets) — non va mai messo qui,
+	// perché questo file è versionato su Git.
+	"vars": {
+		"NOTIFY_EMAIL": "alessandroformica6@gmail.com"
+	}
+}

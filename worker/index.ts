@@ -1,17 +1,25 @@
 /**
- * Cloudflare Pages Function — POST /api/recensioni
+ * Worker entry point per formikadesk-site (Workers-with-assets, no adapter-cloudflare).
+ *
+ * Il sito è interamente statico (SvelteKit adapter-static → build/), servito
+ * tramite il binding "assets" configurato in wrangler.jsonc. Questo script
+ * viene invocato SOLO per le richieste che non combaciano con nessun asset
+ * statico — in pratica: POST /api/recensioni, più fallback su env.ASSETS.fetch
+ * per qualunque altro path non trovato (così Cloudflare applica comunque la
+ * sua gestione di trailing slash / 404 sugli asset).
  *
  * Riceve una recensione dal form pubblico (src/routes/recensioni/+page.svelte),
  * la valida, applica un rate limit basico per IP e invia una notifica email
  * via Resend. NON pubblica nulla: la pubblicazione avviene sempre a mano,
  * tramite commit su src/lib/data/reviews.json dopo revisione.
  *
- * Variabili d'ambiente richieste (Cloudflare Pages → Settings → Environment variables):
+ * Variabili d'ambiente richieste (Cloudflare dashboard → Settings → Variables and Secrets):
  *   RESEND_API_KEY   — API key di Resend (secret)
- *   NOTIFY_EMAIL     — indirizzo a cui inviare la notifica (opzionale, fallback sotto)
+ *   NOTIFY_EMAIL     — indirizzo a cui inviare la notifica (dichiarato in wrangler.jsonc)
  *
- * Binding richiesto (Cloudflare Pages → Settings → Functions → KV namespace bindings):
+ * Binding richiesto (dichiarato in wrangler.jsonc):
  *   RECENSIONI_KV    — namespace KV usato per il rate limit per IP
+ *   ASSETS           — binding verso la cartella build/ (statico)
  */
 
 const RATE_LIMIT_WINDOW_SECONDS = 600; // 10 minuti
@@ -125,15 +133,7 @@ async function sendNotificationEmail(
 	}
 }
 
-interface Env {
-	RECENSIONI_KV?: KVNamespace;
-	RESEND_API_KEY: string;
-	NOTIFY_EMAIL?: string;
-}
-
-export const onRequestPost: PagesFunction<Env> = async (context) => {
-	const { request, env } = context;
-
+async function handleRecensioni(request: Request, env: Env): Promise<Response> {
 	let body: any;
 	try {
 		body = await request.json();
@@ -170,4 +170,26 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 	}
 
 	return jsonResponse({ ok: true });
+}
+
+interface Env {
+	ASSETS: { fetch: typeof fetch };
+	RECENSIONI_KV?: KVNamespace;
+	RESEND_API_KEY: string;
+	NOTIFY_EMAIL?: string;
+}
+
+export default {
+	async fetch(request: Request, env: Env): Promise<Response> {
+		const url = new URL(request.url);
+
+		if (url.pathname === '/api/recensioni' && request.method === 'POST') {
+			return handleRecensioni(request, env);
+		}
+
+		// Qualunque altro path arrivato qui non ha combaciato con un asset
+		// statico: rilanciamo su ASSETS per farci gestire da Cloudflare il
+		// comportamento di default (trailing slash, 404, ecc.).
+		return env.ASSETS.fetch(request);
+	}
 };
