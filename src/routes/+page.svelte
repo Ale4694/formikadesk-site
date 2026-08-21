@@ -94,7 +94,7 @@
 			<a href="#cosa-fa" class="transition-colors hover:text-ink">Cosa fa</a>
 			<a href="#in-locale" class="transition-colors hover:text-ink">In locale</a>
 			<a href="#recensioni" class="transition-colors hover:text-ink">Recensioni</a>
-			<a href="#preventivo" class="transition-colors hover:text-ink">Preventivo</a>
+			<a href="/preventivo" class="transition-colors hover:text-ink">Preventivo</a>
 		</div>
 		<a
 			href={waLink}
