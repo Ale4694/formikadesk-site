@@ -383,7 +383,7 @@
 				</a>
 				<a
 					href="/preventivo"
-					class="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-ink/40 hover:bg-paper"
+					class="inline-flex items-center gap-2 rounded-full border border-accent px-6 py-3 font-medium text-accent transition-all hover:-translate-y-0.5 hover:bg-accent/10"
 				>
 					Configura il tuo preventivo
 				</a>
