@@ -372,7 +372,7 @@
 					</li>
 				</ul>
 			</div>
-			<div class="reveal mx-auto mt-9 max-w-xl text-center">
+			<div class="reveal mx-auto mt-9 flex max-w-xl flex-wrap items-center justify-center gap-3">
 				<a
 					href="https://wa.me/393204562042"
 					target="_blank"
@@ -380,6 +380,12 @@
 					class="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-accent-deep"
 				>
 					Chiedi un preventivo su WhatsApp
+				</a>
+				<a
+					href="/preventivo"
+					class="inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-ink/40 hover:bg-paper"
+				>
+					Configura il tuo preventivo
 				</a>
 			</div>
 		</div>
